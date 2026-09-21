@@ -1,0 +1,52 @@
+GOAL-DIRECTED AUTONOMY — CHECKLIST
+==================================
+Status: DONE (2026-07-18) — S0–S4 inkl. Retrieval, Digest, Temporal Facts, Browser-Muster
+Vision: Steffen-Ziele → Isaac Subgoals/Inquiry/Research/Lernen
+Systemschutz bleibt (Constitution/Privilege/Audit).
+
+──────────────────────────────────────────────────────────────────────────────
+S0 KANONIK
+──────────────────────────────────────────────────────────────────────────────
+[x] AGENTS.md: goal-directed Autonomie freigegeben
+[x] AGENTS.md Phasen-Tabelle: Goal-Autonomie ✅ (S0–S4, Doc-Sync 2026-07-23)
+[x] Do-Not-Expand: ungebundene Personality/Trust vs Owner bleibt verboten
+
+──────────────────────────────────────────────────────────────────────────────
+S1 GOAL STORE + PROMPT
+──────────────────────────────────────────────────────────────────────────────
+[x] goal_store.py (OwnerGoal + Subgoal + Persistenz JSON)
+[x] Kernel: Ziel: / ziele / Ziel erledigt: / Ziel pause:
+[x] Status-Block mit aktiven Zielen
+[x] Tests routing + store
+[x] Retrieval: active goals in build_retrieval_context (Slice 1b)
+
+──────────────────────────────────────────────────────────────────────────────
+S2 MOTIVATION + TICK
+──────────────────────────────────────────────────────────────────────────────
+[x] motivation.py Scoring
+[x] background_loop Goal-Tick (GOAL_AUTONOMY_INTERVAL)
+[x] Subgoal auto-create für active goals
+[x] DecisionTrace MOTIVATION phase
+[x] Status: nächste Motivation
+[x] Research-Tools nur bei Research-Markern/Meta (kein attempts%3 Tool-Spam)
+[x] Anti-Spam: Subgoal-Cooldown (ISAAC_GOAL_SUBGOAL_COOLDOWN_S), Attempts-Dämpfung
+[x] Max-Attempts pro Subgoal (ISAAC_GOAL_MAX_SUBGOAL_ATTEMPTS) → failed + Inquiry
+
+──────────────────────────────────────────────────────────────────────────────
+S3 INQUIRY / RESEARCH / LEARN (an goal_id)
+──────────────────────────────────────────────────────────────────────────────
+[x] choose_work_mode: plan|research|inquiry|work
+[x] goal_inquiry store (offene Fragen an Steffen)
+[x] Research/Inquiry-Prompts mit Owner-Ziel-ID
+[x] record_goal_learning_from_task → facts source=goal:{id}
+[x] Failure → recovery subgoal (cap: max 1 active recovery; kein Recovery-von-Recovery)
+[x] Subgoal-Verify: high score / success_criteria → subgoal done; optional goal done
+[x] Digest-Kanal gebündelt (Slice 4) — goal_digest.py + Background-Tick
+
+──────────────────────────────────────────────────────────────────────────────
+S4 TEMPORAL / WATCHLIST (Phase 3 — Graphiti-Muster, kein Framework)
+──────────────────────────────────────────────────────────────────────────────
+[x] goal_latest priorisiert vor goal_progress in search/retrieval
+[x] supersede_stale_goal_progress beim Update von goal_latest
+[x] docs/GITHUB_WATCHLIST.md: OpenClaw/Hermes Pattern-Notizen (read-only)
+[x] browser-use patterns (kein wholesale): _safe_goto, page-alive, action retry
