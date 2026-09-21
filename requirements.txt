@@ -1,10 +1,36 @@
-ipywidgets==8.1.8
-matplotlib==3.8.4
-pandas==2.2.2
-torch==2.13.0
-torchvision==0.28.0
-tqdm==4.66.4
-pillow>=12.1.1
-fonttools>=4.60.0
-filelock>=3.20.3
-Pygments==2.20.0
+# Isaac v5.4 – Dependencies
+
+# Kern (Pflicht)
+aiohttp>=3.9.0
+websockets>=12.0
+python-dotenv>=1.0.0
+
+# Browser-Automation
+playwright>=1.40.0
+# Nach Installation: playwright install chromium
+
+# Semantisches Gedächtnis (empfohlen, optional)
+# Aktiviert sich automatisch wenn installiert:
+chromadb>=0.4.0
+
+# Termux/Android: Akku-Awareness
+# pkg install termux-api   (im Termux-Terminal, kein pip)
+
+# Lokale Modelle (empfohlen)
+# Ollama separat installieren: https://ollama.ai
+# ollama pull qwen2.5:1.5b
+
+# Schnelle kostenlose API-Alternative:
+# GROQ_API_KEY in .env → https://console.groq.com (kostenlos)
+
+# Google AI Studio / Gemini (optional — Runtime nutzt aiohttp REST in relay.py)
+# GOOGLE_API_KEY in .env → https://aistudio.google.com/apikey
+# Setup: bash scripts/setup_google_stack.sh
+# google-genai>=1.0.0
+
+# Dashboard/API
+Flask>=3.0.0
+
+# Optional observability — AI agent monitoring (no-op without SENTRY_DSN)
+# pip install 'sentry-sdk>=2.60.0'  # stream_gen_ai_spans + Conversations
+sentry-sdk>=2.60.0
