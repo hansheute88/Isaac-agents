@@ -66,7 +66,7 @@ class TestBrowserLivePlaywright(unittest.IsolatedAsyncioTestCase):
                 {"action": "wait", "seconds": 0.3},
                 {
                     "action": "extract_text",
-                    "selector": "h1",
+                    "selector": "h1, title, p",
                     "save_as": "heading",
                 },
             ],
